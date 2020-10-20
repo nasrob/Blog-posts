@@ -57,7 +57,7 @@ puis rajoutez une nav-bar dans `/src/app/app.component.html`:
 </div>
 ```
 
-avec un peu du style dans `/app/styles.scss`:
+avec un peu du style dans `src/styles.scss`:
 
 ```css
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
@@ -243,11 +243,10 @@ Et pour plusieurs properites css:
 
 ```html
 <div
-  class="play-container"
+  class="home-container"
   [ngStyle]="{
-    'background-color': clickCounter > 4 ? 'yellow' : 'lightgray',
-    'border':           clickCounter > 4 ? '4px solid black' : 'none'}
-"
+    'background-color': name.length > 5 ? 'lavender' : 'lightgreen',
+    'border':           name.length > 5 ? '4px solid black' : 'none'}"
 ></div>
 ```
 
