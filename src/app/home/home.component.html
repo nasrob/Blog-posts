@@ -1,0 +1,30 @@
+<h1>{{ mainTitle }} <span>{{ newDate | date:'medium' }}</span></h1>
+
+<div class="home-container" [ngStyle]="{
+    'background-color': name.length > 5 ? 'lavender' : 'lightgreen',
+    'border':           name.length > 5 ? '4px solid black' : 'none'}">
+  <p>On a cliqué <span (click)="toggleTitle()">ICI</span> </p>
+
+  <p [style.background-color]="name.length > 5 ? 'yellow' : 'lightgray'">
+
+    <input type="text" [(ngModel)]="name"><br>
+    <strong>Vous avez dit: </strong>
+    <!-- <span [class.long-name]="name.length > 5">{{ name }}</span> -->
+    <span [ngClass]="setCssClasses()">{{ name }}</span>
+
+    <ng-template [ngIf]="name.length > 5" [ngIfElse]="none">
+      <p>Le nombre de carctères est <strong>Superieur</strong> à 5.</p>
+    </ng-template>
+
+    <ng-template #none>
+        <p>Le nombre de carctères est <strong>Inferieur</strong> à 5.</p>
+    </ng-template>
+
+  </p>
+
+
+</div>
+
+<div [ngStyle]="styleObject">
+  <h3>ngStyle avec un objet</h3>
+</div>

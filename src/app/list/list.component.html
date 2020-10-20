@@ -1,0 +1,10 @@
+
+<div>
+  <h3>Selection des articles de la semaine</h3>
+  <ul *ngFor="let postInList of posts">
+    <li>
+      <app-single-post [aPost]="postInList" ></app-single-post>
+    </li>
+  </ul>
+</div>
+<app-creat-post (createPost)="addPost($event)"></app-creat-post>

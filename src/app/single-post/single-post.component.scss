@@ -1,0 +1,26 @@
+  div {
+    background: rgb(238, 238, 238);
+    padding: 1em;
+    margin-right: 10px;
+    width: 70vw;
+    height: 30vh;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin: 0;
+    }
+
+    p.description {
+      font-weight: 500;
+      font-style: oblique;
+      font-size: 1.2rem;
+    }
+
+    p.text {
+      text-transform: capitalize;
+      font-size: .9rem;
+      flex-grow: 1;
+    }
+  }
