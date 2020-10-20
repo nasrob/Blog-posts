@@ -1,5 +1,5 @@
 
-<div>
+<div *ngIf="posts">
   <h3>Selection des articles de la semaine</h3>
   <ul *ngFor="let postInList of posts">
     <li>
@@ -7,4 +7,4 @@
     </li>
   </ul>
 </div>
-<app-creat-post (createPost)="addPost($event)"></app-creat-post>
+<app-create-post (createPost)="addPost($event)"></app-create-post>

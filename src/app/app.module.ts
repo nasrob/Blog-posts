@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { ListComponent } from './list/list.component';
 import { FormsModule } from '@angular/forms';
 import { SinglePostComponent } from './single-post/single-post.component';
-import { CreatPostComponent } from './creat-post/creat-post.component'; // l'import du FormsModule
+import { CreatePostComponent } from './create-post/create-post.component'; // l'import du FormsModule
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { CreatPostComponent } from './creat-post/creat-post.component'; // l'imp
     HomeComponent,
     ListComponent,
     SinglePostComponent,
-    CreatPostComponent
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,

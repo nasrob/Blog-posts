@@ -1,0 +1,19 @@
+<div>
+  <h3>Ajouter un nouvel Article</h3>
+  <form #newPostForm="ngForm" (ngSubmit)="addNewPost(newPostForm)">
+    <div class="form-group">
+      <label for="title">Titre</label>
+      <input type="text" name="title" ngModel>
+
+      <label for="description">Description</label>
+      <input type="text" name="description" ngModel>
+
+      <label for="text">Le Texte</label>
+      <textarea rows="5" name="text" ngModel></textarea>
+
+      <button type="submit">Publiez</button>
+    </div>
+
+  </form>
+
+</div>

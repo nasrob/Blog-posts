@@ -1,0 +1,45 @@
+.form-group {
+  padding: 0.8rem;
+  margin: 0.8rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 0 15px 4px rgba(99, 186, 243, 0.5);
+}
+
+input {
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(15, 15, 15, 0.06);
+  padding: 0.8rem;
+  margin: 0.8rem;
+  border-radius:10px;
+  width: 80%;
+}
+
+textarea {
+  border-radius:10px;
+  padding: 0.8rem;
+  margin: 1rem;
+  width: 80%;
+  resize: both;
+  // border: 0;
+  border: 1px solid #eee;
+}
+
+button {
+  border: 0;
+  border-radius:10px;
+  padding: 0.8rem;
+  margin: 0.8rem;
+  width: 40%;
+  cursor: pointer;
+  background-color: plum;
+  font-weight: bold;
+  font-size: large;
+  color: antiquewhite;
+}
+
+label {
+  margin-top: 1.2rem;
+}

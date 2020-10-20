@@ -330,7 +330,7 @@ On remarque l'utilisation des directives `ngIf` et `ngFor` dans `list.component.
 </div>
 ```
 
-dans le `single-post.html`:
+dans le `single-post.html` on rajoute ces ligne:
 
 ```html
 <div>
@@ -339,6 +339,8 @@ dans le `single-post.html`:
   <p>{{ aPost.text }}</p>
 </div>
 ```
+
+dans le `single-post.ts`:
 
 ```ts
 import { Component, Input, OnInit } from "@angular/core";
@@ -358,6 +360,8 @@ export class SinglePostComponent implements OnInit {
   ngOnInit(): void {}
 }
 ```
+
+Dans `list.component.ts` :
 
 ```ts
 import { Component, OnInit } from "@angular/core";
@@ -401,18 +405,19 @@ export class ListComponent implements OnInit {
 
 ## Output
 
-`ng g c create-post`
+On crée un nouveau component `ng g c create-post`, pour créer un nouveau blog-post avec un formulaire, puis envoyer ce dernier vers `list.component.html`, en utilisant `@Output` avec un evenement (`EventEmitter`) qui se déclanche à l'envoi du formulaire (`submit, `)
 
 ```html
 <h3>Ajouter un nouvel Article</h3>
 <div>
-  <form action="" [(ngModel)]="newPost">
-    <input type="text" name="title" [(ngModel)]="newPost.title" />
-    <input type="text" name="description" [(ngModel)]="newPost.description" />
-    <input type="textarea" name="" [(ngModel)]="newPost.text" />
-
-    <button (click)="addNewPost(newPost)">Publiez</button>
-    <p></p>
+  <form #newPostForm="ngForm" (ngSubmit)="addNewPost(newPostForm)">
+    <div class="form-group">
+      <input type="text" name="title" ngModel />
+      <input type="text" name="description" ngModel />
+      <textarea cols="100" rows="5" name="text" ngModel></textarea>
+      <button type="submit">Publiez</button>
+      <p></p>
+    </div>
   </form>
 </div>
 ```
@@ -444,14 +449,18 @@ export class CreatPostComponent implements OnInit {
 }
 ```
 
-dans le parent (list `list.component.html`)
+dans le parent (`list.component.html`), on rajoute cette ligne après la `div` qui existe.
 
 ```html
-<app-creat-post (createPost)="addPost($event)"></app-creat-post>
+<app-create-post (createPost)="addPost($event)"></app-create-post>
 ```
+
+dans `list.component.ts` on rajoute la fonction `addPost($event)`:
 
 ```ts
 addPost(post: BlogPost) {
-    this.posts.push(post);
-  }
+  this.posts.push(post);
+}
 ```
+
+cette fonction qui reçoit `$event` en parametre, cette fonctionne s'execute une fois l'évenement `createPost` déclonché dans le composant `create-post`.

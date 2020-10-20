@@ -39,6 +39,7 @@ export class ListComponent implements OnInit {
   }
 
   addPost(post: BlogPost) {
+    console.log('avant le push', post)
     this.posts.push(post);
   }
 
